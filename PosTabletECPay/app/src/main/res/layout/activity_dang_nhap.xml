@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <ImageView
+        android:id="@+id/ivBackgroundBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/login1"
+        android:adjustViewBounds="true"/>
+
+    <Button
+        android:id="@+id/btDangNhap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:layout_above="@+id/ivBackgroundBottom"
+        android:text="Đăng nhập"
+        android:background="@drawable/bg_button"
+        android:textColor="@color/colorTextWhite"/>
+
+    <CheckBox
+        android:id="@+id/cbNhoMatKhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btDangNhap"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Nhớ mật khẩu"
+        android:textColor="@color/colorGray"/>
+
+    <EditText
+        android:id="@+id/etMatKhau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cbNhoMatKhau"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="textPassword"
+        android:drawableLeft="@mipmap/ic_matkhau"
+        android:hint="Mật khẩu"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/etTaiKhoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etMatKhau"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="textNoSuggestions|textVisiblePassword"
+        android:drawableLeft="@mipmap/ic_taikhoan"
+        android:hint="Số tài khoản"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/tvThongBao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tài khoản hoặc mật khẩu không chính xác"
+        android:layout_above="@+id/etTaiKhoan"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorRed"
+        android:textStyle="italic"
+        android:visibility="gone"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvThongBao"
+        android:src="@drawable/logoecpay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        android:adjustViewBounds="true"/>
+
+</RelativeLayout>
