@@ -19,6 +19,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 import views.ecpay.com.postabletecpay.util.commons.Common;
 import views.ecpay.com.postabletecpay.util.dbs.SQLiteConnection;
@@ -30,10 +32,10 @@ import views.ecpay.com.postabletecpay.view.Main.MainActivity;
 
 public class DangNhapActivity extends ActionBarActivity implements View.OnClickListener {
 
-    private EditText etTaiKhoan;
-    private EditText etMatKhau;
-    private CheckBox cbNhoMatKhau;
-    private Button btDangNhap;
+    @Bind(R.id.etTaiKhoan) EditText etTaiKhoan;
+    @Bind(R.id.etMatKhau) EditText etMatKhau;
+    @Bind(R.id.cbNhoMatKhau) CheckBox cbNhoMatKhau;
+    @Bind(R.id.btDangNhap) Button btDangNhap;
 
     private SQLiteConnection connection = null;
 
@@ -66,10 +68,7 @@ public class DangNhapActivity extends ActionBarActivity implements View.OnClickL
         Common.makeRootFolder(this);
         connection = SQLiteConnection.getInstance(this);
 
-        etTaiKhoan = (EditText) findViewById(R.id.etTaiKhoan);
-        etMatKhau = (EditText) findViewById(R.id.etMatKhau);
-        cbNhoMatKhau = (CheckBox) findViewById(R.id.cbNhoMatKhau);
-        btDangNhap = (Button) findViewById(R.id.btDangNhap);
+        ButterKnife.bind(this);
 
         btDangNhap.setOnClickListener(this);
     }

@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 
 /**
@@ -17,26 +19,25 @@ import views.ecpay.com.postabletecpay.R;
 
 public class BaoCaoTongHopFragment extends Fragment implements View.OnClickListener {
 
-    private TextView tvNgayIn, tvThuNgan, tvSHDGiao, tvSTGiao, tvSHDThu, tvSTThu, tvSHDTon, tvSTTon, tvSHDThuVangLai, tvSTThuVangLai, tvSHDHoanTra,
-            tvSTHoanTra;
-    private Button btInBaoCao;
+    @Bind(R.id.tvNgayIn) TextView tvNgayIn;
+    @Bind(R.id.tvThuNgan) TextView tvThuNgan;
+    @Bind(R.id.tvSHDGiao) TextView tvSHDGiao;
+    @Bind(R.id.tvSTGiao) TextView tvSTGiao;
+    @Bind(R.id.tvSHDThu) TextView tvSHDThu;
+    @Bind(R.id.tvSTThu) TextView tvSTThu;
+    @Bind(R.id.tvSHDTon) TextView tvSHDTon;
+    @Bind(R.id.tvSTTon) TextView tvSTTon;
+    @Bind(R.id.tvSHDThuVangLai) TextView tvSHDThuVangLai;
+    @Bind(R.id.tvSTThuVangLai) TextView tvSTThuVangLai;
+    @Bind(R.id.tvSHDHoanTra) TextView tvSHDHoanTra;
+    @Bind(R.id.tvSTHoanTra) TextView tvSTHoanTra;
+    @Bind(R.id.btInBaoCao) Button btInBaoCao;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_baocao_tonghop, container, false);
-        tvNgayIn = (TextView) view.findViewById(R.id.tvNgayIn);
-        tvThuNgan = (TextView) view.findViewById(R.id.tvThuNgan);
-        tvSHDGiao = (TextView) view.findViewById(R.id.tvSHDGiao);
-        tvSTGiao = (TextView) view.findViewById(R.id.tvSTGiao);
-        tvSHDThu = (TextView) view.findViewById(R.id.tvSHDThu);
-        tvSTThu = (TextView) view.findViewById(R.id.tvSTThu);
-        tvSHDTon = (TextView) view.findViewById(R.id.tvSHDTon);
-        tvSTTon = (TextView) view.findViewById(R.id.tvSTTon);
-        tvSHDThuVangLai = (TextView) view.findViewById(R.id.tvSHDThuVangLai);
-        tvSTThuVangLai = (TextView) view.findViewById(R.id.tvSTThuVangLai);
-        tvSHDHoanTra = (TextView) view.findViewById(R.id.tvSHDHoanTra);
-        tvSTHoanTra = (TextView) view.findViewById(R.id.tvSTHoanTra);
-        btInBaoCao = (Button) view.findViewById(R.id.btInBaoCao);
+        ButterKnife.bind(this, view);
 
         btInBaoCao.setOnClickListener(this);
         return view;

@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 
 /**
@@ -19,22 +21,19 @@ import views.ecpay.com.postabletecpay.R;
 
 public class BaoCaoChiTietFragment extends Fragment implements View.OnClickListener {
 
-    private RadioButton rbMaKH, rbTenKH;
-    private EditText etSearch, etTuNgay, etDenNgay;
-    private Button btTimKiem;
-    private RecyclerView rvDanhSach;
+    @Bind(R.id.rbMaKH) RadioButton rbMaKH;
+    @Bind(R.id.rbTenKH) RadioButton rbTenKH;
+    @Bind(R.id.etSearch) EditText etSearch;
+    @Bind(R.id.etTuNgay) EditText etTuNgay;
+    @Bind(R.id.etDenNgay) EditText etDenNgay;
+    @Bind(R.id.btTimKiem) Button btTimKiem;
+    @Bind(R.id.rvDanhSach) RecyclerView rvDanhSach;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_baocao_chitiet, container, false);
-        rbMaKH = (RadioButton) view.findViewById(R.id.rbMaKH);
-        rbTenKH = (RadioButton) view.findViewById(R.id.rbTenKH);
-        etSearch = (EditText) view.findViewById(R.id.etSearch);
-        etTuNgay = (EditText) view.findViewById(R.id.etTuNgay);
-        etDenNgay = (EditText) view.findViewById(R.id.etDenNgay);
-        btTimKiem = (Button) view.findViewById(R.id.btTimKiem);
-        rvDanhSach = (RecyclerView) view.findViewById(R.id.rvDanhSach);
+        ButterKnife.bind(this, view);
 
         btTimKiem.setOnClickListener(this);
 

@@ -18,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 import views.ecpay.com.postabletecpay.util.libs.PopupMenu.MenuItem;
 import views.ecpay.com.postabletecpay.util.libs.PopupMenu.PopupMenu;
@@ -34,10 +36,17 @@ import views.ecpay.com.postabletecpay.view.ThanhToan.ThanhToanFragment;
 public class TrangChuFragment extends Fragment implements View.OnClickListener, PopupMenu.OnItemSelectedListener {
 
     private OnFragmentInteractionListener listener;
-    private ImageView ivAvatar;
-    private TextView tvUsername, tvSoDuKhaDung, tvSoHoaDon, tvTongTien;
-    private ImageButton ibThoat, ibTroGiup;
-    private Button btXoaDuLieu, btThanhToan, btBaoCao;
+
+    @Bind(R.id.ivAvatar) ImageView ivAvatar;
+    @Bind(R.id.tvUsername) TextView tvUsername;
+    @Bind(R.id.tvSoDuKhaDung) TextView tvSoDuKhaDung;
+    @Bind(R.id.tvSoHoaDon) TextView tvSoHoaDon;
+    @Bind(R.id.tvTongTien) TextView tvTongTien;
+    @Bind(R.id.ibThoat) ImageButton ibThoat;
+    @Bind(R.id.ibTroGiup) ImageButton ibTroGiup;
+    @Bind(R.id.btXoaDuLieu) Button btXoaDuLieu;
+    @Bind(R.id.btThanhToan) Button btThanhToan;
+    @Bind(R.id.btBaoCao) Button btBaoCao;
 
     private String[] arrPopupMenu = {"Thông tin tài khoản", "Đổi mật khẩu", "Hướng dẫn", "Đóng"};
 
@@ -59,16 +68,7 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener, 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trang_chu, container, false);
 
-        ivAvatar = (ImageView) view.findViewById(R.id.ivAvatar);
-        tvUsername = (TextView) view.findViewById(R.id.tvUsername);
-        tvSoDuKhaDung = (TextView) view.findViewById(R.id.tvSoDuKhaDung);
-        tvSoHoaDon = (TextView) view.findViewById(R.id.tvSoHoaDon);
-        tvTongTien = (TextView) view.findViewById(R.id.tvTongTien);
-        ibThoat = (ImageButton) view.findViewById(R.id.ibThoat);
-        ibTroGiup = (ImageButton) view.findViewById(R.id.ibTroGiup);
-        btXoaDuLieu = (Button) view.findViewById(R.id.btXoaDuLieu);
-        btThanhToan = (Button) view.findViewById(R.id.btThanhToan);
-        btBaoCao = (Button) view.findViewById(R.id.btBaoCao);
+        ButterKnife.bind(this, view);
 
         ivAvatar.setOnClickListener(this);
         ibThoat.setOnClickListener(this);

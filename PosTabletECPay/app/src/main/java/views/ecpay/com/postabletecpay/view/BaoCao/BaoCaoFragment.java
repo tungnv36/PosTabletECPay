@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 
 /**
@@ -18,9 +20,9 @@ import views.ecpay.com.postabletecpay.R;
 
 public class BaoCaoFragment extends Fragment implements View.OnClickListener {
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private ImageButton ibBack;
+    @Bind(R.id.tabs) TabLayout tabLayout;
+    @Bind(R.id.view_pager) ViewPager viewPager;
+    @Bind(R.id.ibBack) ImageButton ibBack;
 
     public BaoCaoFragment() {
 
@@ -41,9 +43,7 @@ public class BaoCaoFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bao_cao, container, false);
 
-        tabLayout = (TabLayout)view.findViewById(R.id.tabs);
-        viewPager = (ViewPager)view.findViewById(R.id.view_pager);
-        ibBack = (ImageButton) view.findViewById(R.id.ibBack);
+        ButterKnife.bind(this, view);
 
         ibBack.setOnClickListener(this);
 

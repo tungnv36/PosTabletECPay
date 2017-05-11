@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 import views.ecpay.com.postabletecpay.view.DoiMatKhau.DoiMatKhauActivity;
 
@@ -21,10 +23,19 @@ import views.ecpay.com.postabletecpay.view.DoiMatKhau.DoiMatKhauActivity;
 
 public class TaiKhoanFragment extends Fragment implements View.OnClickListener {
 
-    private ImageButton ibBack;
-    private TextView tvTaiKhoan, tvNgayDangKy, tvTenTaiKhoan, tvCMND, tvDienThoai, tvEmail, tvDiaChi, tvSoTaiKhoan,
-            tvSoDuKhaDung, tvLoaiTaiKhoan;
-    private Button btDoiMatKhau, btDangXuat;
+    @Bind(R.id.ibBack) ImageButton ibBack;
+    @Bind(R.id.tvTaiKhoan) TextView tvTaiKhoan;
+    @Bind(R.id.tvNgayDangKy) TextView tvNgayDangKy;
+    @Bind(R.id.tvTenTaiKhoan) TextView tvTenTaiKhoan;
+    @Bind(R.id.tvCMND) TextView tvCMND;
+    @Bind(R.id.tvDienThoai) TextView tvDienThoai;
+    @Bind(R.id.tvEmail) TextView tvEmail;
+    @Bind(R.id.tvDiaChi) TextView tvDiaChi;
+    @Bind(R.id.tvSoTaiKhoan) TextView tvSoTaiKhoan;
+    @Bind(R.id.tvSoDuKhaDung) TextView tvSoDuKhaDung;
+    @Bind(R.id.tvLoaiTaiKhoan) TextView tvLoaiTaiKhoan;
+    @Bind(R.id.btDoiMatKhau) Button btDoiMatKhau;
+    @Bind(R.id.btDangXuat) Button btDangXuat;
 
     private OnFragmentInteractionListener listener;
 
@@ -40,19 +51,7 @@ public class TaiKhoanFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tai_khoan, container, false);
-        ibBack = (ImageButton) view.findViewById(R.id.ibBack);
-        tvTaiKhoan = (TextView) view.findViewById(R.id.tvTaiKhoan);
-        tvNgayDangKy = (TextView) view.findViewById(R.id.tvNgayDangKy);
-        tvTenTaiKhoan = (TextView) view.findViewById(R.id.tvTenTaiKhoan);
-        tvCMND = (TextView) view.findViewById(R.id.tvCMND);
-        tvDienThoai = (TextView) view.findViewById(R.id.tvDienThoai);
-        tvEmail = (TextView) view.findViewById(R.id.tvEmail);
-        tvDiaChi = (TextView) view.findViewById(R.id.tvDiaChi);
-        tvSoTaiKhoan = (TextView) view.findViewById(R.id.tvSoTaiKhoan);
-        tvSoDuKhaDung = (TextView) view.findViewById(R.id.tvSoDuKhaDung);
-        tvLoaiTaiKhoan = (TextView) view.findViewById(R.id.tvLoaiTaiKhoan);
-        btDoiMatKhau = (Button) view.findViewById(R.id.btDoiMatKhau);
-        btDangXuat = (Button) view.findViewById(R.id.btDangXuat);
+        ButterKnife.bind(this, view);
 
         btDoiMatKhau.setOnClickListener(this);
         btDangXuat.setOnClickListener(this);

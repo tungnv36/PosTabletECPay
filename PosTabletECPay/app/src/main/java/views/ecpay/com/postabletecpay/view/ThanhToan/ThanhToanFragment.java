@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 
 /**
@@ -27,13 +29,16 @@ import views.ecpay.com.postabletecpay.R;
 
 public class ThanhToanFragment extends Fragment implements View.OnClickListener {
 
-    private ImageButton ibBack, ibScaner, ibAdd;
-    private EditText etSearch;
-    private TextView tvHoaDon, tvTongTien;
-    private Button btThanhToan;
-    private RecyclerView rvHoaDon;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    @Bind(R.id.ibBack) ImageButton ibBack;
+    @Bind(R.id.ibScaner) ImageButton ibScaner;
+    @Bind(R.id.ibAdd) ImageButton ibAdd;
+    @Bind(R.id.etSearch) EditText etSearch;
+    @Bind(R.id.tvHoaDon) TextView tvHoaDon;
+    @Bind(R.id.tvTongTien) TextView tvTongTien;
+    @Bind(R.id.btThanhToan) Button btThanhToan;
+    @Bind(R.id.rvHoaDon) RecyclerView rvHoaDon;
+    @Bind(R.id.tabs) TabLayout tabLayout;
+    @Bind(R.id.view_pager) ViewPager viewPager;
 
     private OnFragmentInteractionListener listener;
 
@@ -50,16 +55,7 @@ public class ThanhToanFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_thanh_toan, container, false);
 
-        ibBack = (ImageButton)view.findViewById(R.id.ibBack);
-        ibScaner = (ImageButton)view.findViewById(R.id.ibScaner);
-        ibAdd = (ImageButton)view.findViewById(R.id.ibAdd);
-        etSearch = (EditText) view.findViewById(R.id.etSearch);
-        tvHoaDon = (TextView) view.findViewById(R.id.tvHoaDon);
-        tvTongTien = (TextView) view.findViewById(R.id.tvTongTien);
-        btThanhToan = (Button) view.findViewById(R.id.btThanhToan);
-        rvHoaDon = (RecyclerView) view.findViewById(R.id.rvHoaDon);
-        tabLayout = (TabLayout)view.findViewById(R.id.tabs);
-        viewPager = (ViewPager)view.findViewById(R.id.view_pager);
+        ButterKnife.bind(this, view);
 
         ibBack.setOnClickListener(this);
         ibScaner.setOnClickListener(this);

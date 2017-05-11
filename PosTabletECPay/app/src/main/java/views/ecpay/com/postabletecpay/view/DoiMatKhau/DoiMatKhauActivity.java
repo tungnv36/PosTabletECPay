@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import views.ecpay.com.postabletecpay.R;
 
 /**
@@ -20,11 +22,15 @@ import views.ecpay.com.postabletecpay.R;
 
 public class DoiMatKhauActivity extends ActionBarActivity implements View.OnClickListener{
 
-    private ImageButton ibBack;
-    private TextView tvUsername, tvSDT, tvLoi;
-    private ImageView ivAvatar;
-    private EditText etMatKhauCu, etMatKhauMoi, etNhapLaiMatKhauMoi;
-    private Button btDoiMatKhau;
+    @Bind(R.id.ibBack) ImageButton ibBack;
+    @Bind(R.id.tvUsername) TextView tvUsername;
+    @Bind(R.id.tvSDT) TextView tvSDT;
+    @Bind(R.id.tvLoi) TextView tvLoi;
+    @Bind(R.id.ivAvatar) ImageView ivAvatar;
+    @Bind(R.id.etMatKhauCu) EditText etMatKhauCu;
+    @Bind(R.id.etMatKhauMoi) EditText etMatKhauMoi;
+    @Bind(R.id.etNhapLaiMatKhauMoi) EditText etNhapLaiMatKhauMoi;
+    @Bind(R.id.btDoiMatKhau) Button btDoiMatKhau;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +46,7 @@ public class DoiMatKhauActivity extends ActionBarActivity implements View.OnClic
             }
 
             setContentView(R.layout.activity_doi_mat_khau);
-            ibBack = (ImageButton) findViewById(R.id.ibBack);
-            tvUsername = (TextView) findViewById(R.id.tvUsername);
-            tvSDT = (TextView) findViewById(R.id.tvSDT);
-            tvLoi = (TextView) findViewById(R.id.tvLoi);
-            ivAvatar = (ImageView) findViewById(R.id.ivAvatar);
-            etMatKhauCu = (EditText) findViewById(R.id.etMatKhau);
-            etMatKhauMoi = (EditText) findViewById(R.id.etMatKhauMoi);
-            etNhapLaiMatKhauMoi = (EditText) findViewById(R.id.etNhapLaiMatKhauMoi);
-            btDoiMatKhau = (Button) findViewById(R.id.btDoiMatKhau);
+            ButterKnife.bind(this);
 
             ibBack.setOnClickListener(this);
             btDoiMatKhau.setOnClickListener(this);
